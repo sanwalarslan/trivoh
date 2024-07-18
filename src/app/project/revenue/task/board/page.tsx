@@ -1,4 +1,4 @@
-// components/Board/Board.tsx
+'use client'
 import React, { useState, useEffect } from "react";
 import doticon from "../../../../../../public/assest/icon/dots.svg";
 import Plusicon from "../../../../../../public/assest/icon/plusicon.svg";

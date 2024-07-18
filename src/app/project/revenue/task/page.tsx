@@ -1,6 +1,6 @@
+'use client'
 import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+ import Image from "next/image";
 import listicon from "../../../../../public/assest/icon/layout-list.svg";
 import Boardicon from "../../../../../public/assest/icon/boardgreen.svg";
 import granticon from "../../../../../public/assest/icon/granticon.svg";

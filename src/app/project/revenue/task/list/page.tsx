@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import Image from "next/image";
 import plusicon from "../../../../../../public/assest/icon/plusicon.svg";
@@ -6,10 +7,13 @@ import TaskCard from "./ListCard";
 import EditTaskModal from "./EditTaskModel";
 import { DragDropContext, Droppable, Draggable, DropResult, DroppableProvided, DraggableProvided } from "react-beautiful-dnd";
 
+// Define a type for sections
+type Section = "todo" | "inprogress";
+
 const List = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [section, setSection] = useState<"todo" | "inprogress">("todo");
+  const [section, setSection] = useState<Section>("todo");
   const [tasks, setTasks] = useState<{
     todo: Array<{ id: string; title: string; category: string; description: string; dueDate: string }>;
     inprogress: Array<{ id: string; title: string; category: string; description: string; dueDate: string }>;
@@ -63,14 +67,14 @@ const List = () => {
     setIsModalOpen(false);
   };
 
-  const handleDelete = (id: string, section: "todo" | "inprogress") => {
+  const handleDelete = (id: string, section: Section) => {
     setTasks((prevTasks) => ({
       ...prevTasks,
       [section]: prevTasks[section].filter((task) => task.id !== id),
     }));
   };
 
-  const handleEdit = (id: string, section: "todo" | "inprogress") => {
+  const handleEdit = (id: string, section: Section) => {
     const task = tasks[section].find((task) => task.id === id);
     if (task) {
       setTaskToEdit(task);
@@ -96,19 +100,30 @@ const List = () => {
       return;
     }
 
-    const reorderedTasks = Array.from(tasks[result.source.droppableId as "todo" | "inprogress"]);
+    const sourceSection = result.source.droppableId as Section;
+    const destinationSection = result.destination.droppableId as Section;
+
+    const reorderedTasks = Array.from(tasks[sourceSection]);
     const [removed] = reorderedTasks.splice(result.source.index, 1);
     reorderedTasks.splice(result.destination.index, 0, removed);
 
-    setTasks((prevTasks) => ({
-      ...prevTasks,
-      [result.source.droppableId]: reorderedTasks,
-    }));
+    if (sourceSection === destinationSection) {
+      setTasks((prevTasks) => ({
+        ...prevTasks,
+        [sourceSection]: reorderedTasks,
+      }));
+    } else {
+      setTasks((prevTasks) => ({
+        ...prevTasks,
+        [sourceSection]: reorderedTasks,
+        [destinationSection]: [removed, ...tasks[destinationSection]],
+      }));
+    }
   };
 
   return (
     <div>
-      {["todo", "inprogress"].map((section) => (
+      {(["todo", "inprogress"] as Section[]).map((section) => (
         <div key={section}>
           <div className="flex justify-between py-4">
             <div className="text-base text-black font-bold font-[inter]">
@@ -212,13 +227,13 @@ const List = () => {
               </div>
               <div className="flex justify-between items-center">
                 <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">Add Task</button>
-                <button type="button" onClick={() => setIsModalOpen(false)} className="text-gray-500">Cancel</button>
+                <button type="button" onClick={() => setIsModalOpen(false)} className="bg-red-500 text-white px-4 py-2 rounded-md">Cancel</button>
               </div>
             </form>
           </div>
         </div>
       )}
-
+      
       {/* Edit Task Modal */}
       {isEditModalOpen && taskToEdit && (
         <EditTaskModal
