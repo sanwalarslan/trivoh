@@ -1,8 +1,9 @@
  import React from 'react'
  
- export const page = () => {
+ const Setting = () => {
    return (
-     <div>page</div>
+     <div>Setting</div>
    )
  }
  
+ export default Setting
