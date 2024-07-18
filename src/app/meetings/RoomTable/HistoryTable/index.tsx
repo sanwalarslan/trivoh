@@ -44,13 +44,13 @@ const RoomTable = () => {
               </th>
               <th
                 scope="col"
-                className="h-12 uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
+                className="h-12 uppercase py-3 lg:px-6 px-3 text-xs font-medium stroke-slate-700 text-gray-500"
               >
                 Role
               </th>
               <th
                 scope="col"
-                className="h-12 uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
+                className="h-12 uppercase py-3 lg:px-6 px-3 text-xs font-medium stroke-slate-700 text-gray-500"
               >
                 Meeting ID
               </th>
@@ -62,13 +62,13 @@ const RoomTable = () => {
               </th>
               <th
                 scope="col"
-                className="h-12 uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
+                className="h-12 lg:block hidden uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
               >
                 Schedule
               </th>
               <th
                 scope="col"
-                className="h-12 uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
+                className="h-12    uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
               >
                 More Option
               </th>
@@ -88,7 +88,7 @@ const RoomTable = () => {
                   {meeting.title}
                 </td>
                 <td
-                  className="h-12 py-6 font-medium text-sm whitespace-nowrap align-middle px-6"
+                  className="h-12 py-6 font-medium text-sm whitespace-nowrap align-middle px-3 lg:px-6"
                   style={{
                     animation: `slideInRight 0.5s ease-out forwards`,
                     animationDelay: `${index * 0.1}s`,
@@ -105,7 +105,7 @@ const RoomTable = () => {
                   </div>
                 </td>
                 <td
-                  className="h-12 py-6 font-medium text-sm whitespace-nowrap align-middle px-6 text-black"
+                  className="h-12 py-6 font-medium text-sm whitespace-nowrap align-middle lg:px-6 px-3 text-black"
                   style={{
                     animation: `slideInRight 0.5s ease-out forwards`,
                     animationDelay: `${index * 0.1}s`,
@@ -125,7 +125,7 @@ const RoomTable = () => {
                   </div>
                 </td>
                 <td
-                  className="h-12 py-6 font-medium text-sm whitespace-nowrap align-middle text-black"
+                  className="h-12 lg:block hidden py-6 font-medium text-sm whitespace-nowrap align-middle text-black"
                   style={{
                     animation: `slideInRight 0.5s ease-out forwards`,
                     animationDelay: `${index * 0.1}s`,
@@ -134,13 +134,13 @@ const RoomTable = () => {
                   {meeting.schedule}
                 </td>
                 <td
-                  className="h-12 py-6 font-medium text-sm whitespace-nowrap align-middle px-6"
+                  className="h-12 py-6   font-medium text-sm whitespace-nowrap align-middle px-6"
                   style={{
                     animation: `slideInRight 0.5s ease-out forwards`,
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
-                  <div className="flex justify-between">
+                  <div className="flex justify-between    ">
                     <button className="flex flex-row gap-x-2 px-4 bg-[#007F74] justify-center text-center rounded-md items-center py-2">
                       <div className="brightness-0 invert">
                         <Image

@@ -62,13 +62,13 @@ const RoomTable = () => {
               </th>
               <th
                 scope="col"
-                className="h-12 uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
+                className="h-12 lg:block hidden uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
               >
                 Schedule
               </th>
               <th
                 scope="col"
-                className="h-12 uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
+                className="h-12  uppercase py-3 px-6 text-xs font-medium stroke-slate-700 text-gray-500"
               >
                 More Option
               </th>
@@ -81,8 +81,8 @@ const RoomTable = () => {
                 <td
                   className="h-12 py-6 font-medium text-sm whitespace-nowrap align-middle px-6 text-black"
                   style={{
-                    animation: `slideInRight 0.5s ease-out forwards`,
-                    animationDelay: `${index * 0.1}s`,
+                    animation: `slideInRight 1s ease-out forwards`,
+                    animationDelay: `${index * 1}s`,
                   }}
                 >
                   {meeting.title}
@@ -119,7 +119,7 @@ const RoomTable = () => {
                   </div>
                 </td>
                 <td
-                  className="h-12 py-6 font-medium text-sm whitespace-nowrap align-middle text-black"
+                  className="h-12 lg:block hidden py-6 font-medium text-sm whitespace-nowrap align-middle text-black"
                   style={{
                     animation: `slideInRight 0.5s ease-out forwards`,
                     animationDelay: `${index * 0.1}s`,
@@ -128,7 +128,7 @@ const RoomTable = () => {
                   {meeting.schedule}
                 </td>
                 <td
-                  className="h-12 py-6 font-medium text-sm whitespace-nowrap align-middle px-6"
+                  className="h-12  py-6 font-medium text-sm whitespace-nowrap align-middle px-6"
                   style={{
                     animation: `slideInRight 0.5s ease-out forwards`,
                     animationDelay: `${index * 0.1}s`,

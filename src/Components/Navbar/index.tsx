@@ -9,7 +9,7 @@ import Image from "next/image";
 import Notification from "../Notification";
 import logo from "../../../public/assest/icon/LOgo.svg";
 import video from "../../../public/assest/icon/video.svg";
-import message from "../../../public/assest/icon/mdi_message-processing-outline.svg";
+ import message from "../../../public/assest/icon/mdi_message-processing-outline.svg";
 import calender from "../../../public/assest/icon/calendar.svg";
 import moniter from "../../../public/assest/icon/monitor.svg";
 import Ai from "../../../public/assest/icon/ai.svg";
@@ -39,6 +39,7 @@ const Navbar: React.FC<Pagesprops> = ({ name }) => {
     { id: 5, name: "Whiteboard", path: "/whiteboard", icon: moniter },
     { id: 6, name: "AiSummary", path: "/aisummary", icon: Ai },
     { id: 7, name: "Library", path: "/library", icon: library },
+    { id: 7, name: "Project", path: "/project", icon: moniter },
   ];
 
   const navLinksBottom = [

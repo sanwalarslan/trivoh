@@ -12,8 +12,7 @@ import account from '../../../public/assest/icon/account.svg';
 import setting from '../../../public/assest/icon/settings.svg';
 import help from '../../../public/assest/icon/folder-minus (2).svg';
 import add from "../../../public/assest/icon/Group 1000002849.svg";
-
-import Image from "next/image";
+ import Image from "next/image";
 import Link from "next/link";
 export default function SideNavigationBasic() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);

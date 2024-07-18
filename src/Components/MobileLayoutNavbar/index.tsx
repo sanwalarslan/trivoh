@@ -15,6 +15,7 @@ import add from "../../../public/assest/icon/Group 1000002849.svg";
 import logoCollapsed from "../../../public/assest/icon/TRivoh-Logo-008075 1.svg";
 import home from '../../../public/assest/icon/Graph 1.svg';
 import logoExpanded from "../../../public/assest/icon/LOgo.svg";
+import projectiocn from '../../../public/assest/icon/folder-minus (2).svg'
 const navLinksTop = [
   { id: 1, name: "Home", path: "/dashboard", icon: home },
   { id: 2, name: "Meetings", path: "/meetings", icon: video },
@@ -23,6 +24,7 @@ const navLinksTop = [
   { id: 5, name: "Whiteboard", path: "/whiteboard", icon: moniter },
   { id: 6, name: "AiSummary", path: "/aisummary", icon: Ai },
   { id: 7, name: "Library", path: "/library", icon: library },
+  { id: 7, name: "Project", path: "/project", icon: projectiocn },
 ];
 
 const navLinksBottom = [
@@ -46,7 +48,7 @@ export default function SideNavigationBasic() {
           isSidebarCollapsed ? "w-20" : "w-64"
         } relative z-10`}
       >
-        <div className="flex items-center justify-between py-5">
+        <div className="flex items-center pl-[13px] justify-between py-5">
           <Image
             src={logo}
             width={logoWidth}
@@ -99,7 +101,7 @@ export default function SideNavigationBasic() {
                 </Link>
               </li>
             ))}
-            <li className="py-5 px-1">
+            <li className="py-7 pl-3">
               <Image
                 src={add}
                 width={isSidebarCollapsed ? 188 : 299}
