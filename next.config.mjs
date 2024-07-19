@@ -1,10 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    reactStrictMode: true,
-    images: {
-      domains: ['trivoh.vercel.app'],
-    },
-  };
-  
-  module.exports = nextConfig;
-  
+// @ts-check
+ 
+module.exports = async (phase, { defaultConfig }) => {
+  /**
+   * @type {import('next').NextConfig}
+   */
+  const nextConfig = {
+    /* config options here */
+  }
+  return nextConfig
+}
